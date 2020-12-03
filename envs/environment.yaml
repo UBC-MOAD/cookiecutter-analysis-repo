@@ -1,0 +1,23 @@
+# conda environment description file for the cookiecutter environment that is
+# required to create analysis repos using the cookiecutter-analysis-repo
+# cookiecutter
+#
+# Create a conda environment in which to run cookiecutter with:
+#
+#   $ conda env create -f cookiecutter-analysis-repo/envs/environment.yaml
+#   $ conda activate cookiecutter
+#
+# See the envs/requirements.txt file for an exhaustive list of all of the
+# packages installed in the environment and their versions used in
+# recent development.
+
+name: cookiecutter
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - cookiecutter
+  - pip
+  - python>=3.9
