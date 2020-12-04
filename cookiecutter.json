@@ -1,0 +1,5 @@
+{
+  "researcher_name": "Robin Howard",
+  "github_org": ["SalishSeaCast", "UBC-MOAD"],
+  "analysis_repo": "analysis-{{ cookiecutter.researcher_name.lower().split()[0] }}"
+}
