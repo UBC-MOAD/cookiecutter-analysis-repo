@@ -20,4 +20,4 @@ channels:
 dependencies:
   - cookiecutter
   - pip
-  - python>=3.9
+  - python=3
