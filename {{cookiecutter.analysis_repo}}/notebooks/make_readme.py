@@ -19,7 +19,7 @@ rename a notebook,
 or change the description of a notebook in its first Markdown cell,
 please generate a updated `README.md` file with:
 
-    python3 make_readme.py
+    python3 -m make_readme
 
 and commit and push the updated `README.md` to GitHub.
 """
@@ -30,13 +30,17 @@ from pathlib import Path
 import re
 
 
-nbviewer = "https://nbviewer.jupyter.org/github"
-github_org = "{{ cookiecutter.github_org }}"
-repo = "{{ cookiecutter.analysis_repo }}"
-url = f"{nbviewer}/{github_org}/{repo}/blob/master/{Path.cwd().name}"
+NBVIEWER = "https://nbviewer.jupyter.org/github"
+GITHUB_ORG = "{{ cookiecutter.github_org }}"
+REPO = "{{ cookiecutter.analysis_repo }}"
+TITLE_PATTERN = re.compile("#{1,6} ?")
 
-title_pattern = re.compile("#{1,6} ?")
-readme = """The Jupyter Notebooks in this directory are made by
+
+def main():
+    url = f"{NBVIEWER}/{GITHUB_ORG}/{REPO}/blob/master/{Path.cwd().name}"
+
+    readme = """\
+The Jupyter Notebooks in this directory are made by
 {{ cookiecutter.researcher_name }} for sharing of Python code techniques
 and notes.
 
@@ -46,24 +50,11 @@ Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
 """
-for fn in Path(".").glob("*.ipynb"):
-    readme += f"* ## [{fn}]({url}/{fn})  \n    \n"
-    with open(fn, "rt") as notebook:
-        contents = json.load(notebook)
-    try:
-        first_cell = contents["worksheets"][0]["cells"][0]
-    except KeyError:
-        first_cell = contents["cells"][0]
-    first_cell_type = first_cell["cell_type"]
-    if first_cell_type in "markdown raw".split():
-        desc_lines = first_cell["source"]
-        for line in desc_lines:
-            if title_pattern.match(line):
-                line = f"{title_pattern.sub('**', line).strip()}**"
-            readme += f"    {line}"
-        readme += "\n" * 2
+    for fn in Path(".").glob("*.ipynb"):
+        readme += f"* ## [{fn}]({url}/{fn})  \n    \n"
+        readme += notebook_description(fn)
 
-license = f"""
+    license = f"""
 ## License
 
 These notebooks and files are copyright by the
@@ -75,6 +66,35 @@ http://www.apache.org/licenses/LICENSE-2.0
 Please see the LICENSE file in this repository for details of the license.
 """
 
-with open("README.md", "wt") as f:
-    f.writelines(readme)
-    f.writelines(license)
+    with open("README.md", "wt") as f:
+        f.writelines(readme)
+        f.writelines(license)
+
+
+def notebook_description(fn):
+    description = ""
+    with open(fn, "rt") as notebook:
+        contents = json.load(notebook)
+    try:
+        first_cell = contents["worksheets"][0]["cells"][0]
+    except KeyError:
+        first_cell = contents["cells"][0]
+    first_cell_type = first_cell["cell_type"]
+    if first_cell_type not in "markdown raw".split():
+        return description
+    desc_lines = first_cell["source"]
+    for line in desc_lines:
+        suffix = ""
+        if TITLE_PATTERN.match(line):
+            line = TITLE_PATTERN.sub("**", line)
+            suffix = "**"
+        if line.endswith("\n"):
+            description += f"    {line[:-1]}{suffix}\n"
+        else:
+            description += f"    {line}{suffix}"
+    description += "\n" * 2
+    return description
+
+
+if __name__ == "__main__":
+    main()
