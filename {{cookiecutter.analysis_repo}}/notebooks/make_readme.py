@@ -23,9 +23,7 @@ please generate a updated `README.md` file with:
 
 and commit and push the updated `README.md` to GitHub.
 """
-import datetime
 import json
-import os
 from pathlib import Path
 import re
 
