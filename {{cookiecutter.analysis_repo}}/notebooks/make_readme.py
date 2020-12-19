@@ -29,12 +29,12 @@ import re
 
 NBVIEWER = "https://nbviewer.jupyter.org/github"
 GITHUB_ORG = "{{ cookiecutter.github_org }}"
-REPO = "{{ cookiecutter.analysis_repo }}"
+REPO_NAME = "{{ cookiecutter.analysis_repo }}"
 TITLE_PATTERN = re.compile("#{1,6} ?")
 
 
 def main():
-    url = f"{NBVIEWER}/{GITHUB_ORG}/{REPO}/blob/master/{Path.cwd().name}"
+    url = f"{NBVIEWER}/{GITHUB_ORG}/{REPO_NAME}/blob/master/{Path.cwd().name}"
 
     readme = """\
 The Jupyter Notebooks in this directory are made by
