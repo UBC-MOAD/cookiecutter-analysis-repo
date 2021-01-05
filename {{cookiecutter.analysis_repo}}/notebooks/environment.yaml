@@ -20,14 +20,34 @@ channels:
 dependencies:
   - arrow
   - bottleneck
+  - cliff
   - cmocean
+  - coverage
+  - dask
+  - f90nml
+  - gsw
+  - ipdb
+  - ipython
   - jupyterlab
+  - lxml
   - matplotlib
+  - nbsphinx
   - netCDF4
   - numpy
   - pandas
   - pip
+  - progressbar
+  - pytest
   - python=3
   - pytz
+  - python-dateutil
+  - pyyaml
+  - requests
+  - retrying
   - scipy
+  - sphinx
+  - sphinx_rtd_theme
   - xarray
+  - zeep
+  - pip:
+    - angles
