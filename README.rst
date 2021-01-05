@@ -10,6 +10,20 @@ cookiecutter-analysis-repo
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
+To create your analysis notebook repo:
+
+1. Confirm with Susan which GitHub organization you should create your analysis repo in:
+
+   * `UBC-MOAD`_
+   * `SalishSeaCast`_
+
+   .. _UBC-MOAD: https://github.com/UBC-MOAD
+   .. _SalishSeaCast: https://github.com/SalishSeaCast
+
+2. Follow the instructions in the `MOAD docs Analysis Repositories`_ section to create your analysis repo.
+
+.. _MOAD docs Analysis Repositories: https://ubc-moad-docs.readthedocs.io/en/latest/analysis_repo.html
+
 
 License
 =======
@@ -18,9 +32,11 @@ License
     :target: https://www.apache.org/licenses/LICENSE-2.0
     :alt: Licensed under the Apache License, Version 2.0
 
-This analysis repo cookiecutter is copyright 2020 by the UBC EOAS MOAD Group
+This analysis repo cookiecutter is copyright 2020-2021 by the `UBC EOAS MOAD Group`_
 and The University of British Columbia.
 
 It is licensed under the Apache License, Version 2.0.
 https://www.apache.org/licenses/LICENSE-2.0.
 Please see the LICENSE file for details of the license.
+
+.. _UBC EOAS MOAD Group: https://github.com/UBC-MOAD/docs/blob/master/CONTRIBUTORS.rst
