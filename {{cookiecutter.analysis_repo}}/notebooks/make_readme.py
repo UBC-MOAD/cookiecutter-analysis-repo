@@ -30,15 +30,17 @@ import re
 NBVIEWER = "https://nbviewer.jupyter.org/github"
 GITHUB_ORG = "{{ cookiecutter.github_org }}"
 REPO_NAME = "{{ cookiecutter.analysis_repo }}"
+DEFAULT_BRANCH_NAME = "main"
+CREATOR_NAME = "{{ cookiecutter.researcher_name }}"
 TITLE_PATTERN = re.compile("#{1,6} ?")
 
 
 def main():
-    url = f"{NBVIEWER}/{GITHUB_ORG}/{REPO_NAME}/blob/master/{Path.cwd().name}"
+    url = f"{NBVIEWER}/{GITHUB_ORG}/{REPO_NAME}/blob/{DEFAULT_BRANCH_NAME}/{Path.cwd().name}"
 
-    readme = """\
+    readme = f"""\
 The Jupyter Notebooks in this directory are made by
-{{ cookiecutter.researcher_name }} for sharing of Python code techniques
+{CREATOR_NAME} for sharing of Python code techniques
 and notes.
 
 The links below are to static renderings of the notebooks via
