@@ -15,7 +15,7 @@ name: cookiecutter
 
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 
 dependencies:
   - cookiecutter
