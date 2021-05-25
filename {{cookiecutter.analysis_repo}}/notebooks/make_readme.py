@@ -57,7 +57,7 @@ Descriptions below the links are from the first cell of the notebooks
 ## License
 
 These notebooks and files are copyright by the
-[UBC EOAS MOAD Group](https://github.com/UBC-MOAD/docs/blob/master/CONTRIBUTORS.rst)
+[UBC EOAS MOAD Group](https://github.com/UBC-MOAD/docs/blob/main/CONTRIBUTORS.rst)
 and The University of British Columbia.
 
 They are licensed under the Apache License, Version 2.0.
