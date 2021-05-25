@@ -1,5 +1,5 @@
 {
   "researcher_name": "Casey Lawrence",
-  "github_org": ["SalishSeaCast", "UBC-MOAD"],
+  "github_org": ["SalishSeaCast", "UBC-MOAD", "SS-Atlantis"],
   "analysis_repo": "analysis-{{ cookiecutter.researcher_name.lower().split()[0] }}"
 }
