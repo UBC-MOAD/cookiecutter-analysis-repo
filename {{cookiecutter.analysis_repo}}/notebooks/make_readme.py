@@ -27,7 +27,7 @@ from pathlib import Path
 import re
 
 
-NBVIEWER = "https://nbviewer.jupyter.org/github"
+NBVIEWER = "https://nbviewer.org/github"
 GITHUB_ORG = "{{ cookiecutter.github_org }}"
 REPO_NAME = "{{ cookiecutter.analysis_repo }}"
 DEFAULT_BRANCH_NAME = "main"
@@ -46,7 +46,7 @@ The Jupyter Notebooks in this directory are made by
 and notes.
 
 The links below are to static renderings of the notebooks via
-[nbviewer.jupyter.org](https://nbviewer.jupyter.org/).
+[nbviewer.jupyter.org](https://nbviewer.org/).
 Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
