@@ -46,7 +46,7 @@ The Jupyter Notebooks in this directory are made by
 and notes.
 
 The links below are to static renderings of the notebooks via
-[nbviewer.jupyter.org](https://nbviewer.org/).
+[nbviewer.org](https://nbviewer.org/).
 Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
