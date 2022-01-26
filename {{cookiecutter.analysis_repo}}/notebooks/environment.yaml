@@ -34,9 +34,9 @@ dependencies:
   - nbsphinx
   - netCDF4
   - numpy
+  - openpyxl
   - pandas
   - pip
-  - progressbar
   - pytest
   - python=3
   - pytz
@@ -47,7 +47,8 @@ dependencies:
   - scipy
   - sphinx
   - sphinx_rtd_theme
+  - tqdm
   - xarray
-  - zeep
+  
   - pip:
     - angles
