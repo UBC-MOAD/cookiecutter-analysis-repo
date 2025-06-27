@@ -25,6 +25,7 @@ dependencies:
   - cmocean
   - coverage
   - dask
+  - erddapy
   - f90nml
   - gsw
   - ipdb
@@ -53,6 +54,6 @@ dependencies:
   - sphinx_rtd_theme
   - tqdm
   - xarray
-  
+
   - pip:
     - angles
