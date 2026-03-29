@@ -1,0 +1,49 @@
+[workspace]
+authors = ["{{ cookiecutter.researcher_name }}"]
+channels = ["conda-forge"]
+name = "{{ cookiecutter.analysis_repo }}"
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[tasks]
+
+[dependencies]
+arrow = "*"
+bottleneck = "*"
+cartopy = "*"
+cliff = "*"
+cmocean = "*"
+coverage = "*"
+dask = "*"
+erddapy = "*"
+f90nml = "*"
+gsw = "*"
+ipdb = "*"
+ipython = "*"
+jupyterlab = "*"
+lxml = "*"
+matplotlib = "*"
+nbsphinx = "*"
+netcdf4 = "*"
+numpy = "*"
+openpyxl = "*"
+pandas = "*"
+pillow = "*"
+pip = "*"
+pyproj = "*"
+pytest = "*"
+python = "3.14.*"
+pytz = "*"
+python-dateutil = "*"
+pyyaml = "*"
+requests = "*"
+retrying = "*"
+scipy = "*"
+shapely = "*"
+sphinx = "*"
+sphinx_rtd_theme = "*"
+tqdm = "*"
+xarray = "*"
+
+[pypi-dependencies]
+angles = "*"
+salishseatools = { git = "https://github.com/SalishSeaCast/tools.git", subdirectory = "SalishSeaTools" }
